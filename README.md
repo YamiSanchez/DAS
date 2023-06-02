@@ -20,7 +20,7 @@ Creator (el objeto app en app.py) declara el método de fábrica abstracta (crea
 
 
 
-**flyweight-> en auth.py en sign-in se aplica porque si los datos que se meten en los campos no están registrados, se crea un nuevo usuario con esos datos, si sí están registrados aparece que ya está en uso y sirve para el login
+**flyweight**-> en auth.py en sign-in se aplica porque si los datos que se meten en los campos no están registrados, se crea un nuevo usuario con esos datos, si sí están registrados aparece que ya está en uso y sirve para el login
 
 ![image](https://github.com/YamiSanchez/DAS/assets/88749681/cf029ddc-410c-4982-acd9-9cec7d71cd52)
 
