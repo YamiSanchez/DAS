@@ -10,7 +10,7 @@ I->en todo el proyecto porque ninguna clase depende de métodos que no usa
 D-> porque app.py no depende de ningún modulo de nivel inferior
 
 # Design Patterns
-**Factory method-> en app.py en viene incializada la variable app en la cual se llama al método create_app para después utilizar el objeto variable para no llamar al constructor directamente.
+**Factory method**-> en app.py en viene incializada la variable app en la cual se llama al método create_app para después utilizar el objeto variable para no llamar al constructor directamente.
 
 ![image](https://github.com/YamiSanchez/DAS/assets/88749681/9a850e89-a7ce-4dbe-bc70-126c56462473)
 
@@ -33,7 +33,7 @@ flyweight dependiendo de si están o no, se decide que hacer, si no están se cr
 
 
 
-**Observer-> en login se utiliza porque cuando el usuario entra se notifica a sus dependientes como a la barra de navegación que cambia a logout si entra el usuario o viceversa, si hace logout se notifica para que regrese a la ventana de home y aparezca la opción de login.
+**Observer**-> en login se utiliza porque cuando el usuario entra se notifica a sus dependientes como a la barra de navegación que cambia a logout si entra el usuario o viceversa, si hace logout se notifica para que regrese a la ventana de home y aparezca la opción de login.
 
 ![image](https://github.com/YamiSanchez/DAS/assets/88749681/e75ba913-7311-4ebc-a1b6-396dbdd60d46)
 
