@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request, flash, redirect, url_for, jsonify
-from flask_login import login_required, current_user
+from flask_login import current_user
 from .models import Post, User, Comment, Like
 from . import db
 
@@ -8,14 +8,12 @@ views = Blueprint("views", __name__)
 
 @views.route("/")
 @views.route("/home")
-@login_required
 def home():
     posts = Post.query.all()
     return render_template("home.html", user=current_user, posts=posts)
 
 
 @views.route("/create-post", methods=['GET', 'POST'])
-@login_required
 def create_post():
     if request.method == "POST":
         text = request.form.get('text')
@@ -33,7 +31,6 @@ def create_post():
 
 
 @views.route("/delete-post/<id>")
-@login_required
 def delete_post(id):
     post = Post.query.filter_by(id=id).first()
 
@@ -50,7 +47,6 @@ def delete_post(id):
 
 
 @views.route("/posts/<username>")
-@login_required
 def posts(username):
     user = User.query.filter_by(username=username).first()
 
@@ -63,7 +59,6 @@ def posts(username):
 
 
 @views.route("/create-comment/<post_id>", methods=['POST'])
-@login_required
 def create_comment(post_id):
     text = request.form.get('text')
 
@@ -83,7 +78,6 @@ def create_comment(post_id):
 
 
 @views.route("/delete-comment/<comment_id>")
-@login_required
 def delete_comment(comment_id):
     comment = Comment.query.filter_by(id=comment_id).first()
 
@@ -99,7 +93,6 @@ def delete_comment(comment_id):
 
 
 @views.route("/like-post/<post_id>", methods=['POST'])
-@login_required
 def like(post_id):
     post = Post.query.filter_by(id=post_id).first()
     like = Like.query.filter_by(
